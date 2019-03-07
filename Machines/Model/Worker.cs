@@ -13,7 +13,7 @@ namespace Machines.Model
         public string login { get; set; }
         public string password { get; set; }
         public access access { get; set; }
-        public Project project { get; set; }
+        public List<Project> projects = new List<Project>();
 
         public Worker()
         {
@@ -25,7 +25,7 @@ namespace Machines.Model
             this.login = login;
             this.password = password;
             this.access = access;
-            this.project = null;
+     
             
         }
         //2. Должна быть возможность создать пользователя
@@ -54,7 +54,7 @@ namespace Machines.Model
                 worker.access = access.работник;
             else
                 worker.access = access.работник; //default
-            worker.project = null;
+           
             Console.WriteLine("Работник создан");
             return worker;
         }
@@ -64,9 +64,13 @@ namespace Machines.Model
             Console.WriteLine("Позиция: {0}", access);
             Console.WriteLine("Логин: {0}", login);
 
-            if (project != null)
+            if (projects != null)
             {
-                Console.WriteLine("Проект: {0}", project.name);
+                foreach (var item in projects)
+                {
+                    Console.WriteLine("Проект: {0}", item.name);
+                }
+                
                                
             }
         }

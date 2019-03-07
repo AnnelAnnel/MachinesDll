@@ -7,18 +7,18 @@ using System.Threading.Tasks;
 
 namespace Machines.Model
 {
+    
     public struct Component
-    {
-        
-        public string name { get; set; }
-        public string code { get; set; }
-       
-      
+    {      
         public Component(string name, string code)
-        {
+        {           
             this.name = name;
             this.code = code;
         }
+
+        
+        public string name { get; set; }
+        public string code { get; set; }
 
         public void printInfo()
         {

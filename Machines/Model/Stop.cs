@@ -41,14 +41,6 @@ namespace Machines.Model
             worker.printInfo();
         }
 
-        //public Stop createStop(Car car, Worker worker)
-        //{
-        //    Console.WriteLine("Введите описание проблемы:");
-        //    string description = Console.ReadLine();
-        //    Console.WriteLine("Введите рекоммендации:");
-        //    string recommendation = Console.ReadLine();
-        //    Stop stop = new Stop(car, description, recommendation, worker);
-        //    return stop;
-        //}
+        
     }
 }

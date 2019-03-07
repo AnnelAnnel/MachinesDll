@@ -14,7 +14,11 @@ namespace Machines.Model
     {
         public Car()
         {
-
+            this.productionYear = DateTime.Now.AddYears(rnd.Next(1, 10));
+            this.type = type.дробилка;
+            this.status = status.inactive;
+            List<Component> components = new List<Component>();
+            List<Stop> stops = new List<Stop>();
         }
         public Car(string brand, string model,string garageNumber, type type)
         {
@@ -38,6 +42,7 @@ namespace Machines.Model
         public status status { get; set; }
         public List<Component> components { get; set; }
         public List<Stop> stops { get; set; }
+
         private static Random rnd = new Random();
 
         public void printInfo()
@@ -73,6 +78,16 @@ namespace Machines.Model
                 }
             }
             Console.WriteLine();
+        }
+
+        //5. Для машины должна быть возможность установить статус Активна/Неактивная;
+        public void statusChange()
+        {
+            if (status == status.active)
+                status = status.inactive;
+            if (status == status.inactive)
+                status = status.active;
+            Console.WriteLine("Текущий статус: {0}", status);
         }
 
     }
